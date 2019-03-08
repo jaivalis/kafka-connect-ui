@@ -17,11 +17,11 @@
 
 <body ng-app="angularAPP" ng-cloak>
 <md-progress-linear md-mode="indeterminate" ng-show="loading || rebalancing"></md-progress-linear>
-<header class="header" ng-controller="HeaderCtrl" style="background-color:{{color}}">
+<header class="header" ng-controller="HeaderCtrl" style="background-color: #2d3746">
     <div layout="row" layout-xs="column">
         <div flex>
             <!-- <h5><a href="{{cluster ? '#/cluster/'+cluster.NAME : '#/'}}">KAFKA CONNECT</a></h5> -->
-            <h5><a href="/#/" style="color:#fff;font-weight: normal;font-size: 14px;">KAFKA CONNECT</a></h5>
+            <h5><a href="/#/" style="color:#fff;font-weight: 500;font-size: 18px; margin-top: 10px;">AXUAL CONNECT</a></h5>
         </div>
         <label ng-show="!missingEnvJS && clusters.length > 1  && !isHome"   style="color:#ccc; font-size:12px"><b>SELECT CLUSTER :</b></label>
         <md-input-container ng-show="!missingEnvJS && clusters.length > 1 && !isHome" class="selectCluster">
@@ -79,7 +79,7 @@ var clusters = [
 <!-- Landoop team promo -->
 <div layout-margin flex>
     <div flex="nogrow">
-        <img ng-src="src/assets/icons/landoop-dark.svg" style="width:20px;float: left;padding-right:5px;"></div>
+        <img ng-src="src/assets/icons/favicon.png" style="width:20px;float: left;padding-right:5px;"></div>
     <div flex>
         <p class="md-caption">Powered by <a href="http://www.axual.io/" target="_blank">AXUAL</a></p>
     </div>

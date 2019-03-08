@@ -3,7 +3,7 @@
         <div ng-controller="KafkaConnectListCtrl" ng-include="'src/kafka-connect/list/list-connectors.html'"></div>
     </div>
     <div flex-gt-sm="66" flex>
-        <md-card ng-hide="connectionFailure || rebalancing">
+        <md-card ng-hide="connectionFailure || rebalancing border: solid 1px #c4cbd4; border-radius: 3px;">
 
             <div layout="row" layout-xs="column">
                 <h1 flex style="font-weight:300; padding-left:20px; margin-bottom:0px">{{welcomeMessage}} <span ng-show="clusters.length > 1">- {{cluster}}</span></h1>
