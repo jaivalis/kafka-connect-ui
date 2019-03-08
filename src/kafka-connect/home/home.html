@@ -3,7 +3,7 @@
 <div layout="row">
 
     <div flex="70">
-        <md-card style="box-shadow:none;">
+        <md-card style="box-shadow:none; border: solid 1px #c4cbd4; border-radius: 3px;">
 
             <md-toolbar class="md-hue-2" style="color:#333;z-index:0; background-color:#FAFAFA; box-shadow:1px 0px 20px rgba(0, 0, 0, 0.08);">
                 <div class="md-toolbar-tools">
@@ -38,13 +38,13 @@
         </md-card>
     </div>
     <div flex="30">
-        <md-card style="margin-bottom:15px;box-shadow:none;">
+        <md-card style="margin-bottom:15px;box-shadow:none; border: solid 1px #c4cbd4;">
             <md-card-content>
                 <div layout="column">
                     <div style="margin: 0px 0px 12px;font-weight: 500; text-transform: uppercase; font-size: 14px;">Connect Clusters</div>
                     <div layout="row">
                         <div flex="25">
-                            <i style="font-size:50px; font-weight:100; color: #9675ce; padding-top:10px" class="fa fa-hdd-o" aria-hidden="true"></i>
+                            <i style="font-size:50px; font-weight:100; color: #169bb8; padding-top:10px" class="fa fa-hdd-o" aria-hidden="true"></i>
                         </div>
                         <div flex style="font-size: 50px; font-weight: 100;">{{envs.length}}</div>
                     </div>
@@ -52,13 +52,13 @@
             </md-card-content>
         </md-card>
 
-        <md-card style="margin-bottom:15px;box-shadow:none;">
+        <md-card style="margin-bottom:15px;box-shadow:none; border: solid 1px #c4cbd4; border-radius: 3px;">
             <md-card-content>
                 <div layout="column">
                     <div style="margin: 0px 0px 12px;font-weight: 500; text-transform: uppercase; font-size: 14px;">Total Connectors</div>
                     <div layout="row">
                         <div flex="25">
-                            <i style="font-size:50px; font-weight:100; color: #03a9f3; padding-top:10px" class="fa fa-plug" aria-hidden="true"></i>
+                            <i style="font-size:50px; font-weight:100; color: #2d3746; padding-top:10px" class="fa fa-plug" aria-hidden="true"></i>
                         </div>
                         <div flex style="font-size: 50px; font-weight: 100;">{{totalConnectors}}</div>
                     </div>
@@ -66,7 +66,7 @@
             </md-card-content>
         </md-card>
 
-        <md-card ng-if="failedClusters > 0" style="margin-bottom:15px;box-shadow:none;">
+        <md-card ng-if="failedClusters > 0" style="margin-bottom:15px;box-shadow:none; border: solid 1px #c4cbd4;">
             <md-card-content>
                 <div layout="column">
                     <div style="margin: 0px 0px 12px;font-weight: 500; text-transform: uppercase; font-size: 14px;">Not responding</div>
