@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Axual Connect UI</title>
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+    <title>Kafka Connect UI</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="src/assets/css/styles.css">
-  <meta charset=utf-8/>
-  <meta name="viewport" content="width=device-width">
-  <meta name="description" content="Kafka Connect UI">
-  <meta name="keywords"
-        content="kafka,schema registry,topics,kafka-topic,kafka-rest,kafka-rest-proxy,kafka management,avro">
-  <meta name="author" content="Landoop Team">
-  <link rel="shortcut icon" href="src/assets/icons/favicon.png">
+    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <meta charset=utf-8/>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Kafka Connect UI">
+    <meta name="keywords"
+          content="kafka,schema registry,topics,kafka-topic,kafka-rest,kafka-rest-proxy,kafka management,avro">
+    <meta name="author" content="Landoop Team">
+    <link rel="shortcut icon" href="src/assets/icons/favicon.png">
 </head>
 
 <body ng-app="angularAPP" ng-cloak>
 <md-progress-linear md-mode="indeterminate" ng-show="loading || rebalancing"></md-progress-linear>
 <header class="header" ng-controller="HeaderCtrl" style="background-color:{{color}}">
-  <div layout="row" layout-xs="column">
-    <div flex>
-     <!-- <h5><a href="{{cluster ? '#/cluster/'+cluster.NAME : '#/'}}">KAFKA CONNECT</a></h5> -->
-      <h5><a href="/#/" style="color:#fff;font-weight: 500;font-size: 14px;">AXUAL CONNECT</a></h5>
+    <div layout="row" layout-xs="column">
+        <div flex>
+            <!-- <h5><a href="{{cluster ? '#/cluster/'+cluster.NAME : '#/'}}">KAFKA CONNECT</a></h5> -->
+            <h5><a href="/#/" style="color:#fff;font-weight: normal;font-size: 14px;">KAFKA CONNECT</a></h5>
+        </div>
+        <label ng-show="!missingEnvJS && clusters.length > 1  && !isHome"   style="color:#ccc; font-size:12px"><b>SELECT CLUSTER :</b></label>
+        <md-input-container ng-show="!missingEnvJS && clusters.length > 1 && !isHome" class="selectCluster">
+            <md-select ng-model="connectEndPoint" aria-label="select cluster">
+                <md-option ng-repeat="connectEndPoint in clusters track by $index"
+                           ng-click="updateEndPoint(connectEndPoint.NAME)"
+                           value="{{connectEndPoint.NAME}}" ng-selected="{{cluster.NAME == connectEndPoint.NAME}}"
+                >{{connectEndPoint.NAME}}</md-option>
+            </md-select>
+        </md-input-container>
     </div>
-    <label ng-show="!missingEnvJS && clusters.length > 1  && !isHome"   style="color:#ccc; font-size:12px"><b>SELECT CLUSTER :</b></label>
-    <md-input-container ng-show="!missingEnvJS && clusters.length > 1 && !isHome" class="selectCluster">
-      <md-select ng-model="connectEndPoint" aria-label="select cluster">
-        <md-option ng-repeat="connectEndPoint in clusters track by $index"
-                   ng-click="updateEndPoint(connectEndPoint.NAME)"
-                   value="{{connectEndPoint.NAME}}" ng-selected="{{cluster.NAME == connectEndPoint.NAME}}"
-                   >{{connectEndPoint.NAME}}</md-option>
-      </md-select>
-      </md-input-container>
-  </div>
 </header>
 
 <!--if env.js is not properly defined-->
 <div layout="row" flex="100" ng-show="missingEnvJS">
-  <md-card>
-    <md-card-content>
-      <h3 style="font-weight:300; color:red"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Missing Cluster Configuration</h3>
-      <br>
-      In order to configure <code>kafka-connect-ui</code> you need to add <code>env.js</code> file in the root directory of the app.
-      <br>
-      Example <b>env.js</b> structure:
-      <pre>
+    <md-card>
+        <md-card-content>
+            <h3 style="font-weight:300; color:red"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Missing Cluster Configuration</h3>
+            <br>
+            In order to configure <code>kafka-connect-ui</code> you need to add <code>env.js</code> file in the root directory of the app.
+            <br>
+            Example <b>env.js</b> structure:
+            <pre>
         <code>
 var clusters = [
    {
@@ -67,22 +67,22 @@ var clusters = [
 ]
         </code>
       </pre>
-    </md-card-content>
-  </md-card>
+        </md-card-content>
+    </md-card>
 </div>
 
 <!--Main Content Starts here-->
 <div ng-hide="missingEnvJS">
-  <ng-view></ng-view>
+    <ng-view></ng-view>
 </div>
 
 <!-- Landoop team promo -->
 <div layout-margin flex>
-  <div flex="nogrow">
-    <img ng-src="src/assets/icons/landoop-dark.svg" style="width:20px;float: left;padding-right:5px;"></div>
-  <div flex>
-    <p class="md-caption">Powered by <a href="http://www.axual.io/" target="_blank">AXUAL</a></p>
-  </div>
+    <div flex="nogrow">
+        <img ng-src="src/assets/icons/landoop-dark.svg" style="width:20px;float: left;padding-right:5px;"></div>
+    <div flex>
+        <p class="md-caption">Powered by <a href="http://www.axual.io/" target="_blank">AXUAL</a></p>
+    </div>
 </div>
 
 <!--CUSTOM-FOOTER-->
