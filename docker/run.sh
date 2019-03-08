@@ -8,7 +8,7 @@ PORT="${PORT:-8000}"
 
 {
     echo "Landoop Kafka Connect UI ${KAFKA_CONNECT_UI_VERSION}"
-    echo "Visit <https://github.com/Landoop/kafka-connect-ui/tree/master/docker>"
+    echo "Visit <https://github.com/jaivalis/kafka-connect-ui/tree/master/docker>"
     echo "to find more about how you can configure this container."
     echo
 
